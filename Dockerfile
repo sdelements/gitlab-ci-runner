@@ -1,8 +1,6 @@
 FROM python:2.7
 
 ENV DEBIAN_FRONTEND noninteractive
-ENV NPM_CONFIG_LOGLEVEL info
-ENV NODE_VERSION 6.9.1
 
 RUN apt-get update \
   && curl -sL https://deb.nodesource.com/setup_6.x | bash - \
