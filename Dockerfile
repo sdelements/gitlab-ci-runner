@@ -9,6 +9,7 @@ RUN apt-get update \
 
 RUN npm install -g yarn
 
-# Casper dependencies
-RUN npm install -g grunt-cli \
-  && npm install -g phantomjs --latest
+# Nightwatch
+RUN git clone https://github.com/nightwatchjs/nightwatch.git \
+  && cd nightwatch \
+  && npm install
