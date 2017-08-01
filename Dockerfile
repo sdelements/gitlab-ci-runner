@@ -9,8 +9,12 @@ RUN apt-get update \
   && apt-get -y install shellcheck \
   && rm -rf /var/lib/apt/lists/*
 
+RUN curl -L https://github.com/docker/compose/releases/download/1.15.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose \
+  && chmod +x /usr/local/bin/docker-compose \
+  && docker-compose --version
+
 # Casper dependencies
 RUN npm install -g yarn \
   && npm install -g grunt-cli \
-  && npm install -g phantomjs --latest
+  && npm install -g phantomjs-prebuilt --latest
 
