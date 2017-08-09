@@ -15,5 +15,4 @@ RUN apt-get update \
   && docker-compose --version \
   && npm install -g yarn \
   && npm install -g grunt-cli \
-  && npm install -g phantomjs-prebuilt --latest
 
