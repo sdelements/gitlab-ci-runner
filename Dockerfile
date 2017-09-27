@@ -8,7 +8,7 @@ RUN apt-get -y update \
   && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
   && apt-get -y update \
   && curl -sL https://deb.nodesource.com/setup_6.x | bash - \
-  && apt-get -y install sendmail krb5-config krb5-user python-ldap libsasl2-dev python-dev libldap2-dev libssl-dev xmlsec1 libfontconfig nodejs yarn \
+  && apt-get -y install sendmail krb5-config krb5-user python-ldap libsasl2-dev python-dev libldap2-dev libssl-dev xmlsec1 libfontconfig nodejs yarn vagrant \
   && apt-get -y install --upgrade python3 \
   && npm install -g grunt-cli \
   && curl -fsSL get.docker.com | sh \
