@@ -14,7 +14,6 @@ RUN apt-get -y update \
   && apt-get install -y xfonts-75dpi xfonts-base xfonts-utils \
   && wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.stretch_amd64.deb \
   && dpkg -i wkhtmltox_0.12.5-1.stretch_amd64.deb \
-  && pip install pdfkit \
   && npm install -g grunt-cli \
   && sed -i 's/peer$/trust/g; s/md5$/trust/g' $(find /etc/postgresql -name pg_hba.conf) \
   && service postgresql restart \
