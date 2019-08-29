@@ -8,9 +8,9 @@ RUN apt-get -y update \
   && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
   && apt-get -y update \
   && curl -sL https://deb.nodesource.com/setup_8.x | bash - \
-  && echo "Package: nodejs" >> /etc/apt/preferences.d/nodejs
-  && echo "Pin: version 8*" >> /etc/apt/preferences.d/nodejs
-  && echo "Pin-Priority: 550" >> /etc/apt/preferences.d/nodejs
+  && echo "Package: nodejs" >> /etc/apt/preferences.d/nodejs \
+  && echo "Pin: version 8*" >> /etc/apt/preferences.d/nodejs \
+  && echo "Pin-Priority: 550" >> /etc/apt/preferences.d/nodejs \
   && apt-get -y install sendmail krb5-config krb5-user python-ldap libsasl2-dev python-dev libldap2-dev libssl-dev xmlsec1 libfontconfig nodejs yarn vagrant openssh-client jq bsdmainutils unzip vim postgresql python3 xfonts-75dpi xfonts-base xfonts-utils \
   && wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.stretch_amd64.deb \
   && dpkg -i wkhtmltox_0.12.5-1.stretch_amd64.deb \
