@@ -11,7 +11,7 @@ RUN apt-get -y update \
   && echo "Package: nodejs" >> /etc/apt/preferences.d/nodejs \
   && echo "Pin: version 8*" >> /etc/apt/preferences.d/nodejs \
   && echo "Pin-Priority: 550" >> /etc/apt/preferences.d/nodejs \
-  && apt-get -y install virtualenv sendmail krb5-config krb5-user python-ldap libsasl2-dev python-dev libldap2-dev libssl-dev xmlsec1 libfontconfig nodejs yarn vagrant openssh-client jq bsdmainutils unzip vim postgresql python3 xfonts-75dpi xfonts-base xfonts-utils \
+  && apt-get -y install virtualenv sendmail krb5-config krb5-user python-ldap libsasl2-dev python-dev libldap2-dev libssl-dev xmlsec1 libfontconfig nodejs yarn vagrant openssh-client jq bsdmainutils unzip vim postgresql xfonts-75dpi xfonts-base xfonts-utils \
   && wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.stretch_amd64.deb \
   && dpkg -i wkhtmltox_0.12.5-1.stretch_amd64.deb \
   && npm install -g grunt-cli \
