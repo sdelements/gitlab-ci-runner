@@ -12,6 +12,12 @@ RUN apt-get -y update \
   && echo "Pin: version 8*" >> /etc/apt/preferences.d/nodejs \
   && echo "Pin-Priority: 550" >> /etc/apt/preferences.d/nodejs \
   && apt-get -y install virtualenv sendmail-bin sendmail krb5-config krb5-user python-ldap libsasl2-dev python3-dev libldap2-dev libssl-dev xmlsec1 libfontconfig nodejs yarn vagrant openssh-client jq bsdmainutils unzip vim postgresql xfonts-75dpi xfonts-base xfonts-utils \
+  && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends ${build_deps} ca-certificates \
+  && curl -sS https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash \
+  && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends git-lfs \
+  && git lfs install \
+  && DEBIAN_FRONTEND=noninteractive apt-get purge -y --auto-remove ${build_deps} \
+  && rm -r /var/lib/apt/lists/* \
   && wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.stretch_amd64.deb \
   && dpkg -i wkhtmltox_0.12.5-1.stretch_amd64.deb \
   && npm install -g grunt-cli \
