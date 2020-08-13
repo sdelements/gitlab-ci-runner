@@ -16,6 +16,8 @@ RUN apt-get -y update \
   && dpkg -i wkhtmltox_0.12.5-1.stretch_amd64.deb \
   # Libcairo
   && apt-get -y install build-essential python-cffi libcairo2 libpango1.0-0 libpangocairo-1.0.0 libgdk-pixbuf2.0-0 libffi-dev shared-mime-info \
+  # Cypress
+  && apt-get -y install xvfb libgtk-3-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 \
   && npm install -g grunt-cli \
   && sed -i 's/peer$/trust/g; s/md5$/trust/g' $(find /etc/postgresql -name pg_hba.conf) \
   && service postgresql restart \
