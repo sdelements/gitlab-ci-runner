@@ -24,7 +24,7 @@ RUN apt-get -y update \
   && curl -fsSL get.docker.com | sh \
   && curl -L https://github.com/docker/compose/releases/download/1.20.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose \
   && chmod +x /usr/local/bin/docker-compose \
-  && wget 'https://storage.googleapis.com/shellcheck/shellcheck-latest.linux.x86_64.tar.xz' \
+  && wget 'https://github.com/koalaman/shellcheck/releases/download/latest/shellcheck-latest.linux.x86_64.tar.xz' \
   && xz -d ./shellcheck-latest.linux.x86_64.tar.xz \
   && tar -xvf ./shellcheck-latest.linux.x86_64.tar \
   && cp ./shellcheck-latest/shellcheck /usr/bin/ \
