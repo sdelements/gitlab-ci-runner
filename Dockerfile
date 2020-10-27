@@ -22,7 +22,7 @@ RUN apt-get -y update \
   && sed -i 's/peer$/trust/g; s/md5$/trust/g' $(find /etc/postgresql -name pg_hba.conf) \
   && service postgresql restart \
   && curl -fsSL get.docker.com | sh \
-  && curl -L https://github.com/docker/compose/releases/download/1.27.4/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose \
+  && curl -L https://github.com/docker/compose/releases/download/1.20.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose \
   && chmod +x /usr/local/bin/docker-compose \
   && wget 'https://github.com/koalaman/shellcheck/releases/download/latest/shellcheck-latest.linux.x86_64.tar.xz' \
   && xz -d ./shellcheck-latest.linux.x86_64.tar.xz \
