@@ -17,7 +17,7 @@ RUN apt-get -y update \
   # Libcairo
   && apt-get -y install build-essential python-cffi libcairo2 libpango1.0-0 libpangocairo-1.0.0 libgdk-pixbuf2.0-0 libffi-dev shared-mime-info \
   # Cypress
-  && apt-get -y install xvfb libgtk-3-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 \
+  && apt-get -y install libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb \
   && npm install -g grunt-cli \
   && sed -i 's/peer$/trust/g; s/md5$/trust/g' $(find /etc/postgresql -name pg_hba.conf) \
   && service postgresql restart \
