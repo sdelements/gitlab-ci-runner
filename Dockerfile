@@ -1,4 +1,4 @@
-FROM python:3.6-stretch
+FROM python:3.9-buster
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -12,8 +12,8 @@ RUN apt-get -y update \
   && echo "Pin: version 14*" >> /etc/apt/preferences.d/nodejs \
   && echo "Pin-Priority: 550" >> /etc/apt/preferences.d/nodejs \
   && apt-get -y install virtualenv sendmail-bin sendmail krb5-config krb5-user python-ldap libsasl2-dev python3-dev libldap2-dev libssl-dev xmlsec1 libfontconfig nodejs yarn vagrant openssh-client jq bsdmainutils unzip vim postgresql xfonts-75dpi xfonts-base xfonts-utils \
-  && wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.stretch_amd64.deb \
-  && dpkg -i wkhtmltox_0.12.5-1.stretch_amd64.deb \
+  && wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.buster_amd64.deb \
+  && dpkg -i wkhtmltox_0.12.5-1.buster_amd64.deb \
   # Libcairo
   && apt-get -y install build-essential python-cffi libcairo2 libpango1.0-0 libpangocairo-1.0.0 libgdk-pixbuf2.0-0 libffi-dev shared-mime-info \
   # Cypress
