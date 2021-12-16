@@ -6,12 +6,14 @@ RUN apt-get -y update \
   && apt-get -y install apt-transport-https wget \
   && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
   && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
+  && curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - \
+  && echo "deb http://apt.postgresql.org/pub/repos/apt/ buster-pgdg main" | tee /etc/apt/sources.list.d/postgresql.list \
   && apt-get -y update \
   && curl -sL https://deb.nodesource.com/setup_14.x | bash - \
   && echo "Package: nodejs" >> /etc/apt/preferences.d/nodejs \
   && echo "Pin: version 14*" >> /etc/apt/preferences.d/nodejs \
   && echo "Pin-Priority: 550" >> /etc/apt/preferences.d/nodejs \
-  && apt-get -y install virtualenv sendmail-bin sendmail krb5-config krb5-user python-ldap libsasl2-dev python3-dev libldap2-dev libssl-dev xmlsec1 libfontconfig nodejs yarn vagrant openssh-client jq bsdmainutils unzip vim postgresql xfonts-75dpi xfonts-base xfonts-utils \
+  && apt-get -y install virtualenv sendmail-bin sendmail krb5-config krb5-user python-ldap libsasl2-dev python3-dev libldap2-dev libssl-dev xmlsec1 libfontconfig nodejs yarn vagrant openssh-client jq bsdmainutils unzip vim postgresql-12 xfonts-75dpi xfonts-base xfonts-utils \
   && wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.buster_amd64.deb \
   && dpkg -i wkhtmltox_0.12.5-1.buster_amd64.deb \
   # Libcairo
